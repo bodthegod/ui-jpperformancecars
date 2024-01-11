@@ -1,23 +1,27 @@
-import logo from "./logo.svg";
-import "./App.css";
+// src/App.js
 
-function App() {
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import LandingPage from "./pages/LandingPage";
+import styled from "styled-components";
+import { FloatButton } from "antd";
+
+const AppContainer = styled.div`
+  min-height: 100vh;
+  position: relative;
+  padding-bottom: 0px; // Adjust according to the height of your footer
+`;
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        ></a>
-      </header>
-    </div>
+    <Router>
+      <AppContainer className="App">
+        <Routes>
+          <Route path="/" element={<LandingPage />} />
+        </Routes>
+        <FloatButton tooltip={<div>Request Quote</div>} />
+      </AppContainer>
+    </Router>
   );
-}
+};
 
 export default App;
