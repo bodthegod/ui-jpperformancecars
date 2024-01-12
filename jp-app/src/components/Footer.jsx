@@ -8,8 +8,8 @@ const { Footer: AntdFooter } = Layout;
 
 const StyledFooter = styled(AntdFooter)`
   padding: 20px 40px;
-  background-color: #000;
-  color: #fff;
+  background-color: rgba(0, 0, 0, 0.7); // Adjust the opacity as needed
+  color: #fff; // Assuming white text for better contrast
   text-align: center;
 `;
 
