@@ -3,10 +3,12 @@
 import React from "react";
 import styled from "styled-components";
 import { Carousel } from "antd";
+import { Route, Routes } from "react-router-dom";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 import bgimg1 from "../images/ferrari1.jpg";
 import bgimg2 from "../images/ferrari2.jpg";
+import ContactUs from "./Contact";
 
 const LandingPageContainer = styled.div`
   display: flex;
@@ -75,17 +77,23 @@ function LandingPage() {
             />
           </div>
         </Carousel>
-        <MessageContainer>
-          <WelcomeMessage>Welcome to JPPerformance Cars</WelcomeMessage>
-          <Description>
-            JP Performance Cars offers premium services with over 20 years
-            experience in repairing, maintaining and rebuilding supercars...
-          </Description>
-          <SubDescription>
-            JP Performance Cars offers premium services with over 20 years
-            experience in repairing, maintaining and rebuilding supercars...
-          </SubDescription>
-        </MessageContainer>
+        <Routes>
+          <Route path="/contactus" element={<ContactUs />} />
+          <Route path="/" element={<>
+            <MessageContainer>
+              <WelcomeMessage>Welcome to JPPerformance Cars</WelcomeMessage>
+              <Description>
+                JP Performance Cars offers premium services with over 20 years
+                experience in repairing, maintaining and rebuilding supercars...
+              </Description>
+              <SubDescription>
+                JP Performance Cars offers premium services with over 20 years
+                experience in repairing, maintaining and rebuilding supercars...
+              </SubDescription>
+            </MessageContainer>
+          </>
+          } />
+        </Routes>
       </MainContent>
       <Footer />
     </LandingPageContainer>
