@@ -27,13 +27,13 @@ const StyledMenu = styled(Menu)`
     margin-right: 40px; // adjust as needed
     border-bottom: none;
   }
-  .ant-menu-item:hover {
-    color: #c0c0c0; // assuming a lighter color on hover
+  && .ant-menu-item:hover {
+    color: #fff !important; // assuming a lighter color on hover
   }
   .ant-menu-item-active,
   .ant-menu-item-selected,
   .ant-menu-item-open {
-    color: #fff;
+    color: #fff !important;
     border-bottom: none;
   }
 `;
@@ -55,7 +55,7 @@ function Header() {
         JP Performance Cars
       </Title>
       <div style={{ display: "flex", alignItems: "center" }}>
-        <StyledMenu theme="dark" mode="horizontal" defaultSelectedKeys={["1"]}>
+        <StyledMenu mode="horizontal" defaultSelectedKeys={["1"]}>
           <Menu.Item key="1"><Link to="/">Home</Link></Menu.Item>
           <Menu.Item key="2">About</Menu.Item>
           <Menu.Item key="3">
